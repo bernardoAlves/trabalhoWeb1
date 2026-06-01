@@ -86,7 +86,7 @@ public class ComentarioDAO {
     }
 
     public boolean updateComentario(Comentario comentario) {
-        String sql = "UPDATE comentario SET corpoComentario = ? WHERE idComentario = ?";
+        String sql = "UPDATE comentario SET corpoComentario = ?, dataComentario = current_timestamp WHERE idComentario = ?";
         try {
             Connection conexao = ConexaoBD.getConexao();
             PreparedStatement stmt = conexao.prepareStatement(sql);
